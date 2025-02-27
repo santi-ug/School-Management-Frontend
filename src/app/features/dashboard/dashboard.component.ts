@@ -1,10 +1,10 @@
 import { Component, type OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { RouterLink } from "@angular/router"
-import type { DepartamentosService } from "../departamentos/departamentos.service"
-import type { ProfesoresService } from "../profesores/profesores.service"
-import type { EstudiantesService } from "../estudiantes/estudiantes.service"
-import type { CursosService } from "../cursos/cursos.service"
+import { DepartamentosService } from "../departamentos/departamentos.service"
+import { ProfesoresService } from "../profesores/profesores.service"
+import { EstudiantesService } from "../estudiantes/estudiantes.service"
+import { CursosService } from "../cursos/cursos.service"
 
 @Component({
   selector: "app-dashboard",

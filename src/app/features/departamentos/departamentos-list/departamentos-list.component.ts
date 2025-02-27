@@ -1,7 +1,7 @@
 import { Component, type OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { DataTableComponent } from "../../../shared/components/data-table/data-table.component"
-import type { DepartamentosService } from "../departamentos.service"
+import { DepartamentosService } from "../departamentos.service"
 import type { Departamento } from "../../../shared/models/models"
 import { DepartamentoFormComponent } from "../departamento-form/departamento-form.component"
 

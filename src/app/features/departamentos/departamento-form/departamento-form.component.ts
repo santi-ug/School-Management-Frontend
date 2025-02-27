@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, type OnInit, Output } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { type FormBuilder, type FormGroup, ReactiveFormsModule, Validators } from "@angular/forms"
+import { FormBuilder, type FormGroup, ReactiveFormsModule, Validators } from "@angular/forms"
 import type { Departamento } from "../../../shared/models/models"
 import { FormModalComponent } from "../../../shared/components/form-modal/form-modal.component"
 

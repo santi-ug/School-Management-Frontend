@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, type OnInit, Output } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { type FormBuilder, type FormGroup, ReactiveFormsModule, Validators } from "@angular/forms"
+import { FormBuilder, type FormGroup, ReactiveFormsModule, Validators } from "@angular/forms"
 import type { Profesor, Departamento } from "../../../shared/models/models"
 import { FormModalComponent } from "../../../shared/components/form-modal/form-modal.component"
-import type { DepartamentosService } from "../../departamentos/departamentos.service"
+import { DepartamentosService } from "../../departamentos/departamentos.service"
 
 @Component({
   selector: "app-profesor-form",
@@ -64,7 +64,7 @@ import type { DepartamentosService } from "../../departamentos/departamentos.ser
         <select 
           id="id_departamento" 
           formControlName="id_departamento"
-          [disabled]="!isEditing && profesor"
+          [disabled]="!isEditing && !!profesor"
           class="form-control"
         >
           <option value="">Seleccione un departamento</option>
