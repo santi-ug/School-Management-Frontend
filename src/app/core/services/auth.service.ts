@@ -1,12 +1,18 @@
 import { Injectable } from "@angular/core"
-import { HttpClient } from "@angular/common/http"
+import  { HttpClient } from "@angular/common/http"
 import { type Observable, BehaviorSubject, tap } from "rxjs"
-import { Router } from "@angular/router"
+import  { Router } from "@angular/router"
 import { environment } from "../../../environments/environment"
 
 interface LoginResponse {
   access_token: string
-  user: any
+  user: {
+    id: string
+    username: string
+    nombre: string
+    email: string
+    rol: string
+  }
 }
 
 @Injectable({
@@ -52,5 +58,29 @@ export class AuthService {
   getAuthState(): Observable<boolean> {
     return this.authSubject.asObservable()
   }
+
+  getUserRole(): string | null {
+    const userData = localStorage.getItem(this.USER_KEY)
+    if (userData) {
+      const user = JSON.parse(userData)
+      return user.rol
+    }
+    return null
+  }
+  
+  getUserId(): string | null {
+    const userData = this.getUserData()
+    return userData ? userData.id : null
+  }
+
+  getUserData(): any {
+    const userData = localStorage.getItem(this.USER_KEY)
+    if (userData) {
+      return JSON.parse(userData)
+    }
+    return null
+  }
+
+  
 }
 

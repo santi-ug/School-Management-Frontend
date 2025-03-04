@@ -1,8 +1,8 @@
-import { RenderMode, ServerRoute } from '@angular/ssr';
+import { provideServerRendering } from '@angular/platform-server';
 
-export const serverRoutes: ServerRoute[] = [
+export const serverRoutes = [
   {
     path: '**',
-    renderMode: RenderMode.Prerender
+    renderMode: 'prerender'
   }
 ];

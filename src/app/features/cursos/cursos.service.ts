@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core"
-import { HttpClient } from "@angular/common/http"
-import type { Observable } from "rxjs"
-import type { Curso } from "../../shared/models/models"
+import  { HttpClient } from "@angular/common/http"
+import  { Observable } from "rxjs"
+import  { Curso } from "../../shared/models/models"
 import { environment } from "../../../environments/environment"
 
 @Injectable({
@@ -34,6 +34,10 @@ export class CursosService {
 
   getPrerrequisitos(id: string): Observable<Curso[]> {
     return this.http.get<Curso[]>(`${this.API_URL}/${id}/prerrequisitos`)
+  }
+
+  getCursosByProfesor(id_profesor: string): Observable<Curso[]> {
+    return this.http.get<Curso[]>(`${this.API_URL}/profesor/${id_profesor}`)
   }
 }
 
